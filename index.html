@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TravelGo | Travel Website</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom -->
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+    <!-- Topbar -->
+    <div class="tg-topbar border-bottom d-none d-lg-block">
+        <div class="container py-2">
+            <div class="d-flex align-items-center justify-content-between gap-3">
+                <div class="d-flex align-items-center gap-4 small text-secondary">
+                    <span><i class="bi bi-telephone"></i> 02-1234-5678</span>
+                    <span><i class="bi bi-clock"></i> 08:30 - 18:00</span>
+                    <span><i class="bi bi-chat-dots"></i> Online Support</span>
+                </div>
+                <div class="d-flex align-items-center gap-3 small">
+                    <a class="link-secondary text-decoration-none" href="#faq">FAQ</a>
+                    <a class="link-secondary text-decoration-none" href="#contact">Contact</a>
+                    <span class="tg-dot"></span>
+                    <button class="btn btn-sm btn-outline-dark rounded-pill" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        <i class="bi bi-person-circle me-1"></i> Login / Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="./index.html">
+                <span class="tg-logo">TG</span> TravelGo
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#tgNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="tgNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="#tours">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#deals">Deals</a></li>
+
+                    <!-- Destination dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="./japan.html"><i class="bi bi-geo-alt me-2"></i>Japan</a>
+                            </li>
+                            <li><a class="dropdown-item" href="./korea.html"><i class="bi bi-geo-alt me-2"></i>Korea</a>
+                            </li>
+                            <li><a class="dropdown-item" href="./sea.html"><i class="bi bi-geo-alt me-2"></i>SE Asia</a>
+                            </li>
+                            <li><a class="dropdown-item" href="./europe.html"><i
+                                        class="bi bi-geo-alt me-2"></i>Europe</a></li>
+                            <li>
+                                <a class="dropdown-item" href="./america.html">
+                                    <i class="bi bi-geo-alt me-2"></i>America
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="btn btn-primary rounded-pill px-3" data-bs-toggle="offcanvas"
+                            data-bs-target="#cartCanvas">
+                            <i class="bi bi-bag-check me-1"></i> My Trip
+                            <span id="cartCount" class="badge text-bg-light ms-2">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO (※見出しとして “Hero” は一切表示しません) -->
+    <header class="tg-hero">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4500">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img class="d-block w-100 tg-hero-img"
+                        src="https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=2200&q=80"
+                        alt="Travel">
+                    <div class="carousel-caption text-start">
+                        <div class="container">
+                            <div class="row align-items-center tg-hero-minh">
+                                <div class="col-12 col-lg-7">
+                                    <div class="tg-glass p-4 p-lg-5">
+                                        <div class="badge text-bg-light border rounded-pill mb-3">
+                                            <i class="bi bi-lightning-charge"></i> Popular tours updated weekly
+                                        </div>
+                                        <h1 class="display-5 fw-bold lh-sm mb-3">Find your next trip in minutes.</h1>
+                                        <p class="lead text-secondary mb-4">
+                                            Curated packages, transparent pricing, and easy booking — built with
+                                            Bootstrap.
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <a href="#tours" class="btn btn-primary btn-lg rounded-pill px-4">
+                                                Explore Tours <i class="bi bi-arrow-right ms-1"></i>
+                                            </a>
+                                            <a href="#deals" class="btn btn-outline-dark btn-lg rounded-pill px-4">
+                                                View Deals
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-5 mt-4 mt-lg-0">
+                                    <div class="card border-0 shadow-lg">
+                                        <div class="card-body p-4">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h5 class="mb-0">Search</h5>
+                                                <span class="small text-secondary"><i class="bi bi-shield-check"></i>
+                                                    Demo</span>
+                                            </div>
+
+                                            <form id="searchForm" class="vstack gap-3">
+                                                <div>
+                                                    <label class="form-label small">Destination</label>
+                                                    <select id="searchDest" class="form-select">
+                                                        <option value="All" selected>All</option>
+                                                        <option value="Japan">Japan</option>
+                                                        <option value="Korea">Korea</option>
+                                                        <option value="SEA">SE Asia</option>
+                                                        <option value="Europe">Europe</option>
+                                                        <option value="Domestic">Domestic</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="row g-2">
+                                                    <div class="col-6">
+                                                        <label class="form-label small">From</label>
+                                                        <input id="dateFrom" type="date" class="form-control">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label small">To</label>
+                                                        <input id="dateTo" type="date" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row g-2">
+                                                    <div class="col-6">
+                                                        <label class="form-label small">Budget</label>
+                                                        <select id="searchBudget" class="form-select">
+                                                            <option value="All" selected>All</option>
+                                                            <option value="Under20k">Under 20k</option>
+                                                            <option value="20k-50k">20k - 50k</option>
+                                                            <option value="50k+">50k+</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label small">Theme</label>
+                                                        <select id="searchTheme" class="form-select">
+                                                            <option value="All" selected>All</option>
+                                                            <option value="Family">Family</option>
+                                                            <option value="Food">Food</option>
+                                                            <option value="Nature">Nature</option>
+                                                            <option value="City">City</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <button class="btn btn-dark rounded-pill py-2" type="submit">
+                                                    <i class="bi bi-search me-1"></i> Search tours
+                                                </button>
+
+                                                <div class="d-flex flex-wrap gap-2 small text-secondary">
+                                                    <span><i class="bi bi-check2-circle"></i> Best price</span>
+                                                    <span><i class="bi bi-check2-circle"></i> Easy changes</span>
+                                                    <span><i class="bi bi-check2-circle"></i> Fast support</span>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="d-block w-100 tg-hero-img"
+                        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2200&q=80"
+                        alt="Nature">
+                    <div class="carousel-caption text-start">
+                        <div class="container">
+                            <div class="row align-items-center tg-hero-minh">
+                                <div class="col-12 col-lg-7">
+                                    <div class="tg-glass p-4 p-lg-5">
+                                        <div class="badge text-bg-info rounded-pill mb-3">Nature</div>
+                                        <h2 class="display-6 fw-bold mb-3">Breathe in nature. Recharge your week.</h2>
+                                        <p class="lead text-secondary mb-4">National parks, hot springs, and scenic
+                                            routes.</p>
+                                        <a href="#tours" class="btn btn-primary btn-lg rounded-pill px-4"
+                                            data-theme="Nature">
+                                            See Nature trips
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="d-block w-100 tg-hero-img"
+                        src="https://images.unsplash.com/photo-1526779259212-939e64788e3a?auto=format&fit=crop&w=2200&q=80"
+                        alt="Food">
+                    <div class="carousel-caption text-start">
+                        <div class="container">
+                            <div class="row align-items-center tg-hero-minh">
+                                <div class="col-12 col-lg-7">
+                                    <div class="tg-glass p-4 p-lg-5">
+                                        <div class="badge text-bg-warning rounded-pill mb-3">Food</div>
+                                        <h2 class="display-6 fw-bold mb-3">Eat your way through the city.</h2>
+                                        <p class="lead text-secondary mb-4">Street food, local gems, and must-try spots.
+                                        </p>
+                                        <a href="#tours" class="btn btn-dark btn-lg rounded-pill px-4"
+                                            data-theme="Food">
+                                            See Food tours
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Prev</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Category shortcuts -->
+    <section class="py-5">
+        <div class="container">
+            <div class="d-flex align-items-end justify-content-between gap-3 mb-3">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">Browse by destination</h2>
+                    <p class="text-secondary mb-0">Click a card to open the country page.</p>
+                </div>
+                <a class="btn btn-outline-dark rounded-pill" href="#tours">All tours</a>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a class="tg-cat" href="./japan.html">
+                        <span class="tg-cat-icon"><i class="bi bi-camera"></i></span>
+                        <span>
+                            <span class="fw-semibold d-block">Japan</span>
+                            <span class="small text-secondary">Tokyo · Kyoto · Hokkaido</span>
+                        </span>
+                        <i class="bi bi-chevron-right ms-auto"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a class="tg-cat" href="./korea.html">
+                        <span class="tg-cat-icon"><i class="bi bi-shop"></i></span>
+                        <span>
+                            <span class="fw-semibold d-block">Korea</span>
+                            <span class="small text-secondary">Seoul · Busan · Jeju</span>
+                        </span>
+                        <i class="bi bi-chevron-right ms-auto"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a class="tg-cat" href="./sea.html">
+                        <span class="tg-cat-icon"><i class="bi bi-sun"></i></span>
+                        <span>
+                            <span class="fw-semibold d-block">SE Asia</span>
+                            <span class="small text-secondary">Bangkok · Da Nang · Bali</span>
+                        </span>
+                        <i class="bi bi-chevron-right ms-auto"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a class="tg-cat" href="./europe.html">
+                        <span class="tg-cat-icon"><i class="bi bi-buildings"></i></span>
+                        <span>
+                            <span class="fw-semibold d-block">Europe</span>
+                            <span class="small text-secondary">Paris · Rome · Prague</span>
+                        </span>
+                        <i class="bi bi-chevron-right ms-auto"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-3">
+                <div class="col-12 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex gap-3">
+                            <span class="tg-pill"><i class="bi bi-award"></i></span>
+                            <div>
+                                <div class="fw-semibold">Curated quality</div>
+                                <div class="small text-secondary">Handpicked itineraries with clear inclusions.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex gap-3">
+                            <span class="tg-pill"><i class="bi bi-currency-dollar"></i></span>
+                            <div>
+                                <div class="fw-semibold">Transparent pricing</div>
+                                <div class="small text-secondary">Know what you pay for. Demo checkout available.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex gap-3">
+                            <span class="tg-pill"><i class="bi bi-headset"></i></span>
+                            <div>
+                                <div class="fw-semibold">Fast support</div>
+                                <div class="small text-secondary">Help & FAQ sections included.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tours -->
+    <section id="tours" class="py-5 tg-soft">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-3">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">Featured tours</h2>
+                    <p class="text-secondary mb-0">Add to “My Trip” and compare later.</p>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2">
+                    <div class="input-group input-group-sm w-auto">
+                        <span class="input-group-text bg-white"><i class="bi bi-funnel"></i></span>
+                        <select id="quickFilter" class="form-select">
+                            <option value="All" selected>All</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Korea">Korea</option>
+                            <option value="SEA">SE Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Domestic">America</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group input-group-sm w-auto">
+                        <span class="input-group-text bg-white"><i class="bi bi-sort-down"></i></span>
+                        <select id="sortBy" class="form-select">
+                            <option value="Recommended" selected>Recommended</option>
+                            <option value="PriceLow">Price: Low to High</option>
+                            <option value="PriceHigh">Price: High to Low</option>
+                            <option value="RatingHigh">Rating</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tourGrid" class="row g-3"></div>
+
+            <div class="text-center mt-4">
+                <button id="loadMoreBtn" class="btn btn-outline-dark rounded-pill px-4">Load more</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals -->
+    <section id="deals" class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-12 col-lg-7">
+                    <div class="card border-0 shadow-sm tg-round overflow-hidden h-100">
+
+                        <div class="row g-0 h-100">
+                            <div class="col-12 col-md-6 tg-deal-img"></div>
+                            <div class="col-12 col-md-6">
+                                <div class="card-body p-4 p-lg-5">
+                                    <span class="badge text-bg-warning rounded-pill mb-2">Limited</span>
+                                    <h3 class="fw-bold mb-2">Save up to 25%</h3>
+                                    <p class="text-secondary mb-4">Discounts on selected tours (demo).</p>
+                                    <ul class="list-unstyled vstack gap-2 mb-4">
+                                        <li class="d-flex gap-2"><i
+                                                class="bi bi-check2-circle text-success"></i><span>Instant
+                                                confirmation</span></li>
+                                        <li class="d-flex gap-2"><i
+                                                class="bi bi-check2-circle text-success"></i><span>Easy changes</span>
+                                        </li>
+                                        <li class="d-flex gap-2"><i
+                                                class="bi bi-check2-circle text-success"></i><span>Demo checkout</span>
+                                        </li>
+                                    </ul>
+                                    <a href="#tours" class="btn btn-dark rounded-pill px-4">Find deals</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                    <div class="card border-0 shadow-sm tg-round h-100">
+                        <div class="card-body p-4 p-lg-5">
+                            <h4 class="fw-bold mb-2">Get a quick quote</h4>
+                            <p class="text-secondary">UI demo for homework (no backend).</p>
+
+                            <form id="quoteForm" class="row g-3 needs-validation" novalidate>
+                                <div class="col-12">
+                                    <label class="form-label">Name</label>
+                                    <input class="form-control" required placeholder="Your name">
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" required placeholder="name@example.com">
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Preference</label>
+                                    <select class="form-select" required>
+                                        <option value="" selected disabled>Choose…</option>
+                                        <option>Family-friendly</option>
+                                        <option>Food & city</option>
+                                        <option>Nature & hot springs</option>
+                                        <option>Budget trip</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select one.</div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary rounded-pill w-100" type="submit">
+                                        Request quote <i class="bi bi-send ms-1"></i>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <hr class="my-4" />
+                            <div class="small text-secondary">
+                                <i class="bi bi-info-circle me-1"></i> Demo only (no real submission to server).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-5 tg-soft">
+        <div class="container">
+            <div class="d-flex align-items-end justify-content-between gap-3 mb-3">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">Traveler reviews</h2>
+                    <p class="text-secondary mb-0">Bootstrap Carousel.</p>
+                </div>
+                <div class="d-none d-md-flex gap-2">
+                    <button class="btn btn-outline-dark rounded-pill" type="button" data-bs-target="#reviewCarousel"
+                        data-bs-slide="prev">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <button class="btn btn-outline-dark rounded-pill" type="button" data-bs-target="#reviewCarousel"
+                        data-bs-slide="next">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-3">
+                            <div class="col-12 col-lg-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="tg-stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                            <span class="badge text-bg-light border">Japan</span>
+                                        </div>
+                                        <p class="mt-3 mb-3">“Everything was smooth. Clear itinerary and great hotel.”
+                                        </p>
+                                        <div class="small text-secondary">— Mei, Taipei</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="tg-stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star"></i>
+                                            </div>
+                                            <span class="badge text-bg-light border">Europe</span>
+                                        </div>
+                                        <p class="mt-3 mb-3">“Great value for first-time Europe travelers.”</p>
+                                        <div class="small text-secondary">— Kenta, Tokyo</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="tg-stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                            <span class="badge text-bg-light border">SE Asia</span>
+                                        </div>
+                                        <p class="mt-3 mb-3">“Perfect mix of free time and guided activities.”</p>
+                                        <div class="small text-secondary">— Aoi, Kaohsiung</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-3">
+                            <div class="col-12 col-lg-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="tg-stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star"></i>
+                                            </div>
+                                            <span class="badge text-bg-light border">Domestic</span>
+                                        </div>
+                                        <p class="mt-3 mb-3">“Weekend trip was well organized. Comfortable ride.”</p>
+                                        <div class="small text-secondary">— Hana, Taichung</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="tg-stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                            <span class="badge text-bg-light border">Japan</span>
+                                        </div>
+                                        <p class="mt-3 mb-3">“Snow scenery + onsen was amazing.”</p>
+                                        <div class="small text-secondary">— Yuta, Tainan</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="tg-stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star"></i>
+                                            </div>
+                                            <span class="badge text-bg-light border">Korea</span>
+                                        </div>
+                                        <p class="mt-3 mb-3">“Great shopping route and food spots.”</p>
+                                        <div class="small text-secondary">— Rina, Taipei</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="d-md-none mt-3 d-flex justify-content-center gap-2">
+                    <button class="btn btn-outline-dark rounded-pill" type="button" data-bs-target="#reviewCarousel"
+                        data-bs-slide="prev">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <button class="btn btn-outline-dark rounded-pill" type="button" data-bs-target="#reviewCarousel"
+                        data-bs-slide="next">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-lg-5">
+                    <h2 class="h3 fw-bold mb-2">FAQ</h2>
+                    <p class="text-secondary mb-4">Homework向け：よくある旅行サイトの質問をAccordionで。</p>
+                    <div class="card border-0 shadow-sm tg-round">
+                        <div class="card-body d-flex gap-3">
+                            <span class="tg-pill"><i class="bi bi-life-preserver"></i></span>
+                            <div>
+                                <div class="fw-semibold">Need help?</div>
+                                <div class="small text-secondary">We reply within business hours.</div>
+                                <a href="#contact" class="btn btn-sm btn-outline-dark rounded-pill mt-2">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-7">
+                    <div class="accordion" id="faqAcc">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="q1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#a1">
+                                    Is this a real payment website?
+                                </button>
+                            </h2>
+                            <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+                                <div class="accordion-body">
+                                    No. This website is a demo project (UI/UX). Checkout is demo only.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="q2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#a2">
+                                    What’s included in the price?
+                                </button>
+                            </h2>
+                            <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                                <div class="accordion-body">
+                                    Each tour has a detail modal showing inclusions (hotel/transport/meals etc.). (Demo)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="q3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#a3">
+                                    Does it work on mobile?
+                                </button>
+                            </h2>
+                            <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                                <div class="accordion-body">
+                                    Yes. Bootstrap grid and responsive utilities are used.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="q4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#a4">
+                                    How do I submit?
+                                </button>
+                            </h2>
+                            <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                                <div class="accordion-body">
+                                    Push to GitHub → enable GitHub Pages → submit repository + Pages URL.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="py-5 tg-soft">
+        <div class="container">
+            <div class="d-flex align-items-end justify-content-between gap-3 mb-3">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">Travel tips</h2>
+                    <p class="text-secondary mb-0">Cards + badges + responsive grid.</p>
+                </div>
+                <a href="#contact" class="btn btn-outline-dark rounded-pill">Subscribe</a>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card border-0 shadow-sm h-100 overflow-hidden tg-round">
+                        <img class="card-img-top tg-blog-img"
+                            src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80"
+                            alt="blog">
+                        <div class="card-body">
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="badge text-bg-light border">Japan</span>
+                                <span class="badge text-bg-light border">Winter</span>
+                            </div>
+                            <h5 class="card-title">3-day Tokyo itinerary</h5>
+                            <p class="card-text text-secondary">Food, shopping, and scenic spots.</p>
+                            <a class="btn btn-sm btn-dark rounded-pill" href="./japan.html">Read</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card border-0 shadow-sm h-100 overflow-hidden tg-round">
+                        <img class="card-img-top tg-blog-img"
+                            src="https://images.unsplash.com/photo-1494475673543-6a6a27143fc8?auto=format&fit=crop&w=1200&q=80"
+                            alt="blog">
+                        <div class="card-body">
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="badge text-bg-light border">Europe</span>
+                                <span class="badge text-bg-light border">City</span>
+                            </div>
+                            <h5 class="card-title">How to pack light</h5>
+                            <p class="card-text text-secondary">Simple checklist to reduce baggage stress.</p>
+                            <a class="btn btn-sm btn-dark rounded-pill" href="./europe.html">Read</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card border-0 shadow-sm h-100 overflow-hidden tg-round">
+                        <img class="card-img-top tg-blog-img"
+                            src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80"
+                            alt="blog">
+                        <div class="card-body">
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="badge text-bg-light border">SE Asia</span>
+                                <span class="badge text-bg-light border">Food</span>
+                            </div>
+                            <h5 class="card-title">Street food safety tips</h5>
+                            <p class="card-text text-secondary">Enjoy local food with confidence.</p>
+                            <a class="btn btn-sm btn-dark rounded-pill" href="./sea.html">Read</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter + Contact -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-12 col-lg-6">
+                    <div class="card border-0 shadow-sm tg-round h-100">
+                        <div class="card-body p-4 p-lg-5">
+                            <h3 class="fw-bold mb-2">Subscribe</h3>
+                            <p class="text-secondary">Get deals and new tours in your inbox.</p>
+
+                            <form class="row g-2" id="newsletterForm">
+                                <div class="col-12 col-md-8">
+                                    <input type="email" class="form-control form-control-lg"
+                                        placeholder="email@example.com" required>
+                                </div>
+                                <div class="col-12 col-md-4 d-grid">
+                                    <button class="btn btn-dark btn-lg rounded-pill" type="submit">Subscribe</button>
+                                </div>
+                            </form>
+
+                            <div class="small text-secondary mt-3">
+                                <i class="bi bi-lock me-1"></i> Demo: we never share your email.
+                            </div>
+
+                            <hr class="my-4" />
+
+                            <div class="d-flex flex-wrap gap-3">
+                                <a class="btn btn-outline-dark rounded-pill" href="#"><i class="bi bi-line me-1"></i>
+                                    LINE</a>
+                                <a class="btn btn-outline-dark rounded-pill" href="#"><i
+                                        class="bi bi-instagram me-1"></i> Instagram</a>
+                                <a class="btn btn-outline-dark rounded-pill" href="#"><i
+                                        class="bi bi-facebook me-1"></i> Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="card border-0 shadow-sm tg-round h-100 overflow-hidden">
+                        <div class="tg-map d-flex align-items-end p-4 p-lg-5">
+                            <div class="bg-white p-3 tg-round shadow-sm w-100">
+                                <div class="fw-semibold mb-1"><i class="bi bi-geo-alt me-1"></i> TravelGo Office</div>
+                                <div class="small text-secondary mb-2">Taipei, Taiwan (demo)</div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge text-bg-light border">Group tours</span>
+                                    <span class="badge text-bg-light border">Flights</span>
+                                    <span class="badge text-bg-light border">Hotels</span>
+                                    <span class="badge text-bg-light border">Custom</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-4 border-top">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-lg-4">
+                    <div class="d-flex align-items-center gap-2 fw-bold mb-2">
+                        <span class="tg-logo">TG</span> TravelGo
+                    </div>
+                    <p class="text-secondary mb-3">A Bootstrap-based travel website demo for homework.</p>
+                    <div class="small text-secondary">
+                        <div><i class="bi bi-telephone me-1"></i> 02-1234-5678</div>
+                        <div><i class="bi bi-envelope me-1"></i> hello@travelgo.demo</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <div class="fw-semibold mb-2">Company</div>
+                    <ul class="list-unstyled small vstack gap-2">
+                        <li><a class="link-secondary text-decoration-none" href="#tours">Tours</a></li>
+                        <li><a class="link-secondary text-decoration-none" href="#reviews">Reviews</a></li>
+                        <li><a class="link-secondary text-decoration-none" href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <div class="fw-semibold mb-2">Support</div>
+                    <ul class="list-unstyled small vstack gap-2">
+                        <li><a class="link-secondary text-decoration-none" href="#faq">FAQ</a></li>
+                        <li><a class="link-secondary text-decoration-none" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="fw-semibold mb-2">Payment (demo)</div>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge text-bg-light border"><i class="bi bi-credit-card me-1"></i> Card</span>
+                        <span class="badge text-bg-light border"><i class="bi bi-shield-lock me-1"></i> Secure</span>
+                        <span class="badge text-bg-light border"><i class="bi bi-receipt me-1"></i> Invoice</span>
+                    </div>
+                    <div class="small text-secondary">© <span id="year"></span> TravelGo. Built with Bootstrap 5.</div>
+                </div>
+            </div>
+
+            <hr class="my-4" />
+            <div class="d-flex flex-wrap gap-2 justify-content-between small text-secondary">
+                <div>Demo only. No real booking.</div>
+                <div class="d-flex gap-3">
+                    <a class="link-secondary text-decoration-none" href="#">Privacy</a>
+                    <a class="link-secondary text-decoration-none" href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="btn btn-dark rounded-circle tg-top" type="button" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Tour detail modal -->
+    <div class="modal fade" id="tourModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tourModalTitle">Tour</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <img id="tourModalImg" class="w-100 tg-round" alt="tour">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div id="tourModalBadges" class="d-flex flex-wrap gap-2 mb-2"></div>
+                            <p class="text-secondary" id="tourModalDesc"></p>
+
+                            <div class="d-flex align-items-center justify-content-between border tg-round p-3">
+                                <div>
+                                    <div class="small text-secondary">From</div>
+                                    <div class="h5 mb-0 fw-bold" id="tourModalPrice"></div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="small text-secondary">Rating</div>
+                                    <div class="fw-semibold" id="tourModalRating"></div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <div class="fw-semibold mb-2">Includes</div>
+                                <ul class="small text-secondary mb-0" id="tourModalIncludes"></ul>
+                            </div>
+
+                            <div class="alert alert-info small mt-3 mb-0">
+                                This is a demo UI. No real booking/payment.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-dark rounded-pill" data-bs-dismiss="modal">Close</button>
+                    <button id="tourModalAddBtn" class="btn btn-primary rounded-pill">
+                        <i class="bi bi-plus-circle me-1"></i> Add to My Trip
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login / Register</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="vstack gap-3">
+                        <div>
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="name@example.com">
+                        </div>
+                        <div>
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="••••••••">
+                        </div>
+                        <button type="button" class="btn btn-dark rounded-pill">Continue (demo)</button>
+                        <div class="small text-secondary">UI only. No backend.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title"><i class="bi bi-bag-check me-1"></i> My Trip</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="cartList" class="vstack gap-2"></div>
+
+            <div class="mt-auto pt-3 border-top">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-secondary">Total</span>
+                    <span class="fw-bold" id="cartTotal">$0</span>
+                </div>
+                <button id="checkoutBtn" class="btn btn-primary w-100 rounded-pill" type="button">
+                    Checkout (demo)
+                </button>
+                <button id="clearCartBtn" class="btn btn-outline-dark w-100 rounded-pill mt-2" type="button">
+                    Clear
+                </button>
+                <div class="small text-secondary mt-2">No real payment. Demo only.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="demoToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-check2-circle me-2"></i>
+                <strong class="me-auto">TravelGo</strong>
+                <small>Now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastBody">
+                Demo message
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

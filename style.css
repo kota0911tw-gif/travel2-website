@@ -1,0 +1,173 @@
+:root {
+    --soft: #f6f7fb;
+    --text: #121417;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--text);
+}
+
+.tg-topbar {
+    background: #fff;
+}
+
+.tg-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 99px;
+    background: #999;
+    display: inline-block;
+}
+
+.tg-soft {
+    background: var(--soft);
+}
+
+.tg-logo {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.tg-hero-img {
+    height: 78vh;
+    object-fit: cover;
+    filter: saturate(1.05);
+}
+
+.tg-hero-minh {
+    min-height: 62vh;
+}
+
+.tg-glass {
+    background: rgba(255, 255, 255, .90);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .12);
+}
+
+.tg-round {
+    border-radius: 18px !important;
+}
+
+.tg-cat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, .08);
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.tg-cat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+}
+
+.tg-cat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--soft);
+    font-size: 20px;
+}
+
+.tg-pill {
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--soft);
+    font-size: 20px;
+}
+
+.tg-tour-card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.tg-tour-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .10);
+}
+
+.tg-tour-img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.tg-stars i {
+    color: #f4b400;
+}
+
+.tg-deal-img {
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, .10), rgba(0, 0, 0, .45)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80") center/cover no-repeat;
+    min-height: 240px;
+}
+
+.tg-blog-img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.tg-map {
+    min-height: 420px;
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, .10), rgba(0, 0, 0, .55)),
+        url("https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+}
+
+.tg-top {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 46px;
+    height: 46px;
+    display: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+}
+
+@media (max-width: 991.98px) {
+    .tg-hero-img {
+        height: 70vh;
+    }
+}
+
+/* ===== Deals section image ===== */
+.tg-deal-img {
+    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80");
+    background-size: cover;
+    background-position: center;
+    min-height: 260px;
+}
+
+
+@media (min-width: 768px) {
+    .tg-deal-img {
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+}

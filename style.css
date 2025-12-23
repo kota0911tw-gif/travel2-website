@@ -172,10 +172,9 @@ body {
     }
 }
 
-/* Deals image */
 .tg-deal-img {
-  background-image: url("../images1/deals.jpg");
-  background-size: cover;
-  background-position: center;
-  min-height: 260px;
+    background-image: url("./images1/deals.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 260px;
 }

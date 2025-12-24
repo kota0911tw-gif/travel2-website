@@ -320,3 +320,10 @@ function renderCountryTours(region) {
     grid.appendChild(col);
   });
 }
+
+fetch("navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+
